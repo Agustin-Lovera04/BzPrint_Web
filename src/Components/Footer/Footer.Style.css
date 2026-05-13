@@ -1,0 +1,6 @@
+@media (max-width:768px) {
+    .rrss_icons_footer svg{
+        width: 42px !important;
+        height: 42px !important;
+    }
+}

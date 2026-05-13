@@ -1,0 +1,99 @@
+.sc2_row_cart {
+  margin-top: 4rem;
+}
+.img_prod_cart {
+  width: 70%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2rem;
+}
+/* From Uiverse.io by Shoh2008 */
+.checkbox-wrapper-41 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  --size: 70px;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"] {
+  -webkit-appearance: none;
+  width: var(--size);
+  height: calc(var(--size) / 2);
+  background-color: #fff;
+  border: 3px solid #222;
+  border-radius: 30px 100px 100px 100px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 2);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0.7);
+  border: 3px solid #222;
+  border-radius: 30px 100px 100px 100px;
+  background-color: #fde881;
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]:checked {
+  background-color: #fde881;
+  border-radius: 100px 100px 30px 100px;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]:checked::before {
+  left: 50%;
+  background-color: #fff;
+  border-radius: 100px 100px 30px 100px;
+}
+
+.img_prod_cart {
+  object-fit: cover;
+  object-position: center;
+}
+
+.prod_nombre_cart {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.btn_cantidad_cart {
+  min-width: 2.5rem;
+  padding: 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+.btn-custom-width {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .titles_cart {
+    font-size: 1rem;
+  }
+
+  .prod_prices_cart {
+    font-size: 0.9rem;
+  }
+
+  .btn_cantidad_cart {
+    font-size: 0.9rem;
+    min-width: 2rem;
+    padding: 0.25rem 0;
+  }
+  .btn-custom-width {
+    width: 50%;
+  }
+  .sc2_row_cart{
+    flex-direction: column-reverse;
+  }
+}

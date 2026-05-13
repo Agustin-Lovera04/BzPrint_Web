@@ -1,0 +1,59 @@
+.sc2-container {
+  margin-top: -40px;
+}
+
+.box {
+  z-index: 1;
+
+  width: 18rem;
+  height: 9rem;
+  background-size: cover;
+  border-radius: 1.2rem;
+
+  color: white;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.box1 {
+  background-image: url("/images/fibrones.jpg");
+  background-position: center;
+}
+
+.box2 {
+  background-image: url("/images/Sc2_2.png");
+  background-position: center;
+
+}
+
+.box3 {
+  background-image: url("/images/Sc2_3.png");
+  background-position: center;
+
+}
+
+.box_btn {
+  border-radius: 2rem;
+  width: 40%;
+}
+
+@media (max-width: 768px) {
+  .sc2-container {
+    margin-top: -30px;
+  }
+
+  .box {
+    width: 10rem;
+    height: 6rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+  }
+  .box_btn {
+    width: auto;
+    font-size: 0.8rem;
+  }
+}

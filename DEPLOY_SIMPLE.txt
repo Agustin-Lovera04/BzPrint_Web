@@ -1,0 +1,32 @@
+
+DEPLOY SIMPLE SIN GITHUB ACTIONS
+
+1. Abrir terminal en el proyecto
+
+2. Instalar dependencias:
+npm install
+
+3. Build:
+npm run build
+
+4. Instalar gh-pages:
+npm install gh-pages --save-dev
+
+5. Agregar en package.json:
+
+"homepage": "https://agustin-lovera04.github.io/BzPrint_Web/",
+
+Y dentro de scripts:
+
+"deploy": "gh-pages -d dist"
+
+6. Deploy:
+npm run deploy
+
+7. En GitHub:
+Settings -> Pages -> Source -> Deploy from branch
+
+Seleccionar:
+gh-pages / root
+
+LISTO.

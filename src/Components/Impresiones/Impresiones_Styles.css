@@ -1,0 +1,68 @@
+.sc1_impresiones{
+    padding: 1rem;
+}
+
+.sc2_impresiones{
+        background-color:rgba(255, 221, 136, 0.8);
+
+    padding: 1rem;
+}
+
+.img_impresiones{
+    width: 100%;
+    height: 100%;
+}
+.img_pato_impresiones{
+    width: 10rem;
+    height: 13rem;
+    margin: -5rem 0 -1rem 0;
+}
+
+.img_fibrones_impresiones{
+    width: 25rem;
+    height: 15rem;
+    margin: -5rem 0 -1rem 0;
+}
+
+.sc3_impresiones{
+    background-image: url('/images/PlanosImpresiones.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+.sc4_impresiones{
+    background-color: rgba(255, 253, 253, 0.4);
+    padding: 2rem 0 2rem 0;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.mark_planos{
+    background-color:rgba(255, 253, 253, 0.4);
+}
+
+@media (max-width:768px) {
+    .banner_impresiones{
+        height: 30dvh;
+        object-fit: cover;
+    }
+    .img_impresiones{
+    max-width: 20rem;
+    max-height: 90%;
+    border-radius: 1.5rem;
+    margin-bottom: 3rem;
+    }
+
+    .img_impresiones2{
+    max-width: 30rem;
+    max-height: 30rem;
+    }
+    .sc2_impresiones{
+        flex-direction: column-reverse;
+    }
+
+}

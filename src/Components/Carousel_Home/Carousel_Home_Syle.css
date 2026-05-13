@@ -1,0 +1,27 @@
+.carousel-inner {
+  max-height: 45dvh;
+}
+
+.carousel-item {
+  height: 45dvh;
+}
+
+.carousel-image {
+  max-width: 100%;
+    height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.carousel-fade .carousel-item {
+  transition: opacity .5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner {
+    max-width: 100dvw;
+  }
+  .carousel-item {
+    height: auto;
+  }
+
+}

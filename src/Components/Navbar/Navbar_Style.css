@@ -1,0 +1,31 @@
+.navbar {
+  background-color: var(--color_var_1);
+  min-height: 15dvh;
+}
+.brand_image_navbar {
+  width: 15rem;
+}
+
+.count_cart_navbar {
+  background-color: var(--color_var_6);
+  color: var(--color_var_1);
+  margin-top: 25px;
+  margin-left: -10px;
+  border-radius: 50%;
+  padding: 0px 3px 0px 3px;
+}
+
+.offcanvas {
+  background-color: rgba(63, 82, 191, 0.9);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+  min-height: 12dvh;
+}
+.brand_image_navbar {
+  width: 12rem;
+}
+}
