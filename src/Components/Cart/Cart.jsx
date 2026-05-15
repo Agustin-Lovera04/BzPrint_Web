@@ -4,8 +4,8 @@ import { CartContext } from "../../Context/Cart_Context";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const [envio, setEnvio] = useState(1500);
-  const [pagoConTransferencia, setPagoConTransferencia] = useState(false);
+  const [envio] = useState(0);
+
   const {
     cart,
     decCantidadEnCart,
@@ -13,25 +13,22 @@ const Cart = () => {
     vaciarCart,
     total,
     setTotal,
-    setMetodoPago,
   } = useContext(CartContext);
 
+  const getPrecio = (prod) => {
+    const precio = Number(prod.precio);
+    return isNaN(precio) ? 0 : precio;
+  };
+
   const subtotal = cart.reduce(
-    (acc, prod) => acc + prod.precio * prod.cantidad,
+    (acc, prod) => acc + getPrecio(prod) * prod.cantidad,
     0
   );
 
   useEffect(() => {
-    const recargo = pagoConTransferencia ? subtotal * 0.21 : 0;
-    const nuevoTotal = subtotal + envio + recargo;
+    const nuevoTotal = subtotal + envio;
     setTotal(nuevoTotal.toFixed(2));
-  }, [subtotal, envio, pagoConTransferencia, setTotal]);
-
-  const cambioMetodoPago = (e) => {
-    setPagoConTransferencia(e.target.checked);
-    console.log(e.target.checked);
-    setMetodoPago(e.target.checked);
-  };
+  }, [subtotal, envio, setTotal]);
 
   return (
     <div className="container-fluid">
@@ -67,12 +64,13 @@ const Cart = () => {
             >
               <div className="col-12 col-md-2 text-center mb-2 mb-md-0">
                 <img
-                  src={prod.image}
+                  src={prod.image || prod.URLIMAGE?.[0] || ""}
                   alt={prod.nombre}
                   className="img_prod_cart img-fluid"
                   style={{ maxHeight: "100px", borderRadius: "1rem" }}
                 />
               </div>
+
               <div className="col-12 col-md-2 d-flex align-items-center justify-content-center mb-2 mb-md-0 prod_nombre_cart">
                 <span>{prod.nombre}</span>
               </div>
@@ -84,7 +82,9 @@ const Cart = () => {
                 >
                   -
                 </button>
+
                 <p className="var-txt m-0 px-2">{prod.cantidad}</p>
+
                 <button
                   className="btn bg-success text-light btn_cantidad_cart ms-2"
                   onClick={() => incCantidadEnCart(prod.codigo)}
@@ -94,11 +94,12 @@ const Cart = () => {
               </div>
 
               <div className="col-6 col-md-2 text-center prod_prices_cart">
-                <small className="d-md-none">Precio:</small> $ {prod.precio}
+                <small className="d-md-none">Precio:</small> ${(getPrecio(prod)).toFixed(2)}
               </div>
+
               <div className="col-6 col-md-2 text-center prod_prices_cart">
                 <small className="d-md-none">Subtotal:</small> $
-                {prod.precio * prod.cantidad}
+                {(getPrecio(prod) * prod.cantidad).toFixed(2)}
               </div>
             </div>
           ))}
@@ -111,10 +112,11 @@ const Cart = () => {
               >
                 Vaciar carrito
               </button>
+
               <div className="alert alert-warning mb-0">
                 <h4>Costo Envío</h4>
                 <p className="text-dark mb-0">
-                  El costo base del envío es $1.500
+                  Costo de envio (a acordar)
                 </p>
               </div>
             </div>
@@ -129,28 +131,15 @@ const Cart = () => {
                       <th scope="col">Total</th>
                     </tr>
                   </thead>
+
                   <tbody>
                     <tr>
-                      <td>${subtotal}</td>
+                      <td>${subtotal.toFixed(2)}</td>
                       <td>${envio}</td>
                       <td className="fw-bold text-primary">${total}</td>
                     </tr>
                   </tbody>
                 </table>
-              </div>
-
-              <div className="alert alert-warning">
-                El pago mediante transferencia tiene un recargo del 21%
-              </div>
-
-              <div className="checkbox-wrapper-41 mt-2 mb-4 d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
-                <span>Efectivo</span>
-                <input
-                  type="checkbox"
-                  checked={pagoConTransferencia}
-                  onChange={cambioMetodoPago}
-                />
-                <span>Transferencia</span>
               </div>
 
               <Link to={"/ticketCompra"} className="text-center">

@@ -16,11 +16,11 @@ const Card = ({ prod }) => {
         </div>
         <div className="card__footer">
           <div className="card__price">
-            Efect <span className="fw-bold">${prod.precio_efectivo}</span>
+            Efect. <span className="fw-bold">${(prod.precio).toFixed(2)}</span>
             <br />
-            <span className="card_price_transf text-muted">
+            {/* <span className="card_price_transf text-muted">
               Transf ${prod.precio_transferencia}
-            </span>
+            </span> */}
           </div>
           <div className="card__button align-items-center">
             <Link className="text-light d-flex" to={`/libreria/${prod.codigo}`}>

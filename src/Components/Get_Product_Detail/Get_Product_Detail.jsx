@@ -11,7 +11,7 @@ const Get_Product_Detail = () => {
   const [error, setError] = useState(false);
   const { codigo } = useParams();
 
-  const prodRef = doc(db, "PRODUCTS", codigo);
+  const prodRef = doc(db, "products", codigo);
 
   useEffect(() => {
     const getProduct = async () => {

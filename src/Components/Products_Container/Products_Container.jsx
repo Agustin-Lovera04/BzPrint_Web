@@ -16,7 +16,7 @@ const Products_Container = () => {
   const page = searchParams.get("page") || "1";
   const busquedaNombre = searchParams.get("nombre");
 
-  const productsRef = collection(db, "PRODUCTS");
+  const productsRef = collection(db, "products");
   useEffect(() => {
     const getProducts = async () => {
       try {

@@ -9,7 +9,7 @@ import TicketCompra from "../Components/TicketCompra/TicketCompra"
 
 const Router = () => {
   return (
-    <BrowserRouter basename="/BzPrint-Web">
+    <BrowserRouter basename="/BzPrint_Web/">
     <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />

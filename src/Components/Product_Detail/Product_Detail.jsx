@@ -32,10 +32,10 @@ const toast = () => {
       <div className="col-md-6 col-12 p-3">
         <h3 className="var-h3">{prod.nombre}</h3>
         <p className="text-muted">Codigo: {prod.codigo}</p>
-        <h3 className="fw-bold">Precio: $ {prod.precio_efectivo} </h3>
-        <p className="var-txt">
+        <h3 className="fw-bold">Precio: $ {prod.precio.toFixed(2)} </h3>
+        {/* <p className="var-txt">
           Precio con transferencia: $ {prod.precio_transferencia}{" "}
-        </p>
+        </p> */}
         <div className="d-flex align-items-center gap-4 mb-4 bt-4">
           <button
             className="btn bg-danger text-light"
@@ -74,7 +74,7 @@ const toast = () => {
               {
                 codigo: prod.codigo,
                 nombre: prod.nombre,
-                precio: prod.precio_efectivo,
+                precio: prod.precio,
                 image: prod.URLIMAGE[0],
               },
               cantidad,

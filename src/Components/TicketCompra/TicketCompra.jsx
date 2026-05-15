@@ -10,7 +10,7 @@ const TicketCompra = () => {
     
   }
 
-  const numeroTelefono = "5493425260028";
+  const numeroTelefono = "5493426128483";
   const handleForm = (e) => {
     e.preventDefault();
 
@@ -24,7 +24,7 @@ const TicketCompra = () => {
           `*${index + 1}.* ${prod.nombre}
    📦 Cantidad: ${prod.cantidad}
    📝 Detalles: ${prod.detalles || "N/A"}
-   💲 Precio unitario: $${prod.precio}
+   💲 Precio unitario: $${(prod.precio).toFixed(2)}
    💰 Subtotal: $${(prod.precio * prod.cantidad).toFixed(2)}`
       )
       .join("\n\n");
