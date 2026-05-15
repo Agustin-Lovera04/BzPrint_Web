@@ -73,7 +73,7 @@ const Home = () => {
         <h1 className="text-center var-h1">LIBRERÍA</h1>
         <div className="col-12 d-flex flex-row justify-content-center gap-md-4 gap-2 flex-wrap">
           {cardsData.map((p) => (
-            <Card prod={p} />
+            <Card key={p.codigo} prod={p} />
           ))}
         </div>
 

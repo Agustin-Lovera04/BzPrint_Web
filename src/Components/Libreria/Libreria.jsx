@@ -3,6 +3,18 @@ import "./Libreria_Style.css";
 import { useEffect } from "react";
 import Products_Container from "../Products_Container/Products_Container";
 
+const categorias = [
+  { label: "Escolar", value: "escolar" },
+  { label: "Tecnología", value: "tecnologia" },
+  { label: "Universidad", value: "universidad" },
+  { label: "Regalería", value: "regaleria" },
+  { label: "Varios", value: "varios" },
+  { label: "Bazar", value: "bazar" },
+  { label: "Organización", value: "organizacion" },
+  { label: "Oficina", value: "oficina" },
+  { label: "Papel y cuadernos", value: "papel/cuadernos" },
+];
+
 const Libreria = () => {
   const navigate = useNavigate();
 
@@ -16,9 +28,11 @@ const Libreria = () => {
     e.preventDefault();
 
     const input = document.getElementById("busquedaNombre");
-    const busquedaNombre = input.value;
+    const busquedaNombre = input.value.trim();
 
-    navigate(`/libreria?nombre=${busquedaNombre}`);
+    if (busquedaNombre) {
+      navigate(`/libreria?nombre=${busquedaNombre}`);
+    }
 
     input.value = "";
   };
@@ -37,7 +51,7 @@ const Libreria = () => {
           >
             <img
               src="./images/grid1_libreria.png"
-              alt="libreria"
+              alt="librería"
               className="img1_grid img-fluid"
             />
           </div>
@@ -51,9 +65,10 @@ const Libreria = () => {
             >
               <h3 className="title_img_grid">Pizarras</h3>
               <button className="btn">
-                <Link to={"/libreria?nombre=pizarra"}>Ver más</Link>
+                <Link to="/libreria?nombre=pizarra">Ver más</Link>
               </button>
             </div>
+
             <div
               className="img3_grid_container d-flex flex-column justify-content-center align-items-center"
               data-aos="fade-right"
@@ -62,7 +77,7 @@ const Libreria = () => {
             >
               <h3 className="title_img_grid text-light">Carpetas</h3>
               <button className="btn">
-                <Link to={"/libreria?nombre=carpeta"}>Ver más</Link>
+                <Link to="/libreria?nombre=carpeta">Ver más</Link>
               </button>
             </div>
           </div>
@@ -82,12 +97,13 @@ const Libreria = () => {
           >
             <img
               src="./images/grid4_libreria.png"
-              alt="libreria"
+              alt="librería"
               className="img1_grid img-fluid"
             />
           </div>
         </div>
       </div>
+
       <div className="sc2_libreria">
         <div className="row row_filters_libreria">
           <div className="col-md-5 col-8 input_buscar">
@@ -113,55 +129,22 @@ const Libreria = () => {
             >
               Categorías
             </button>
+
             <ul
               className="dropdown-menu dropdown-menu-start"
               aria-labelledby="dropdownCategorias"
             >
-              <li>
-                <Link
-                  className="dropdown-item"
-                  to={"/libreria?category=Librería"}
-                >
-                  Librería
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="dropdown-item"
-                  to="/libreria?category=Papelería"
-                >
-                  Papelería
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="dropdown-item"
-                  to="/libreria?category=Accesorios útiles"
-                >
-                  Accesorios útiles
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="dropdown-item"
-                  to="/libreria?category=Electrónica"
-                >
-                  Electrónica
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="dropdown-item"
-                  to="/libreria?category=Mates, vasos y botellas"
-                >
-                  Mates - vasos y botellas
-                </Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/libreria?category=Oficina">
-                  Oficina
-                </Link>
-              </li>
+              {categorias.map((categoria) => (
+                <li key={categoria.value}>
+                  <Link
+                    className="dropdown-item"
+                    to={`/libreria?category=${categoria.value}`}
+                  >
+                    {categoria.label}
+                  </Link>
+                </li>
+              ))}
+
               <li>
                 <Link className="dropdown-item" to="/libreria">
                   Limpiar filtros
@@ -174,58 +157,31 @@ const Libreria = () => {
         <div className="d-flex">
           <div className="col-2 box_categorias">
             <h4 className="fw-bold">Categorías</h4>
+
             <div className="d-flex flex-column">
               <hr />
+
+              {categorias.map((categoria) => (
+                <div key={categoria.value}>
+                  <Link
+                    to={`/libreria?category=${categoria.value}`}
+                    className="text-muted var-txt text-decoration-none"
+                  >
+                    {categoria.label}
+                  </Link>
+                  <hr />
+                </div>
+              ))}
+
               <Link
-                to={"/libreria?category=Librería"}
-                className="text-muted var-txt text-decoration-none"
-              >
-                Librería
-              </Link>
-              <hr />
-              <Link
-                to={"/libreria?category=Papelería"}
-                className="text-muted var-txt text-decoration-none"
-              >
-                Papelería
-              </Link>
-              <hr />
-              <Link
-                to={"/libreria?category=Accesorios útiles"}
-                className="text-muted var-txt text-decoration-none"
-              >
-                Accesorios útiles
-              </Link>
-              <hr />
-              <Link
-                to={"/libreria?category=Electrónica"}
-                className="text-muted var-txt text-decoration-none"
-              >
-                Electrónica
-              </Link>
-              <hr />
-              <Link
-                to={"/libreria?category=Mates, vasos y botellas"}
-                className="text-muted var-txt text-decoration-none"
-              >
-                Mates - vasos y botellas
-              </Link>
-              <hr />
-              <Link
-                to={"/libreria?category=Oficina"}
-                className="text-muted var-txt text-decoration-none"
-              >
-                Oficina
-              </Link>
-              <hr />
-              <Link
-                to={"/libreria"}
+                to="/libreria"
                 className="text-muted var-txt text-decoration-none"
               >
                 Limpiar filtros
               </Link>
             </div>
           </div>
+
           <div className="cards_container_libreria">
             <Products_Container />
           </div>

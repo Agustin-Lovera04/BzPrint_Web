@@ -16,7 +16,9 @@ const Card = ({ prod }) => {
         </div>
         <div className="card__footer">
           <div className="card__price">
-            Efect. <span className="fw-bold">${(prod.precio).toFixed(2)}</span>
+            Efect.   <span className="fw-bold">
+              ${Number(prod.precio || 0).toFixed(2)}
+            </span>
             <br />
             {/* <span className="card_price_transf text-muted">
               Transf ${prod.precio_transferencia}
