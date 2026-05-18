@@ -16,7 +16,7 @@ const Card = ({ prod }) => {
         </div>
         <div className="card__footer">
           <div className="card__price">
-            Efect.   <span className="fw-bold">
+            <span className="fw-bold">
               ${Number(prod.precio || 0).toFixed(2)}
             </span>
             <br />

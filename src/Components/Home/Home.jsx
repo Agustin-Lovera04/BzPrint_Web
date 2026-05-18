@@ -56,6 +56,11 @@ const cardsData = [
 
 const Home = () => {
   useEffect(() => {
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  }
+}, []);
+  useEffect(() => {
     window.AOS.init({
       duration: 1000,
     });
@@ -99,7 +104,7 @@ const Home = () => {
       <div className="container mb-2">
         <div className="row align-items-center">
           <div
-            className="col-12 col-md-6"
+            className="col-12 col-md-6 slogan_inicio"
             data-aos="fade-right"
             data-aos-duration="1500"
           >
@@ -184,7 +189,7 @@ const Home = () => {
                   stroke-linejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
-                  
+
                   <path
                     d="M8 10.5H16M8 14.5H11M21.0039 12C21.0039 16.9706 16.9745 21 12.0039 21C9.9675 21 3.00463 21 3.00463 21C3.00463 21 4.56382 17.2561 3.93982 16.0008C3.34076 14.7956 3.00391 13.4372 3.00391 12C3.00391 7.02944 7.03334 3 12.0039 3C16.9745 3 21.0039 7.02944 21.0039 12Z"
                     stroke="#2E3C8C"
@@ -280,17 +285,17 @@ const Home = () => {
                   stroke-linejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
-                  
+
                   <g id="Layer_2" data-name="Layer 2">
-                    
+
                     <g id="invisible_box" data-name="invisible box">
-                      
+
                       <rect width="48" height="48" fill="none"></rect>{" "}
                     </g>
                     <g id="Health_Icons" data-name="Health Icons">
-                      
+
                       <g>
-                        
+
                         <path d="M37.7,11.1A3,3,0,0,0,35.4,10H34.2l.3-1.7A3.1,3.1,0,0,0,33.9,6a3.2,3.2,0,0,0-2.2-1H7.8a2,2,0,0,0,0,4H30.3l-4,22.9a6.8,6.8,0,0,0-1,2.1H20.7A7,7,0,0,0,7.3,34H6.2l.5-2.9a2,2,0,0,0-1.6-2.3,2,2,0,0,0-2.3,1.6L2,34.7A2.8,2.8,0,0,0,2.7,37a2.8,2.8,0,0,0,2.1,1H7.3a7,7,0,0,0,13.4,0h4.6a7,7,0,0,0,13.4,0h2a3.2,3.2,0,0,0,3.1-2.7L46,22.5ZM14,39a3,3,0,0,1-3-3,3,3,0,0,1,6,0A3,3,0,0,1,14,39ZM33.5,14h1.3l5.9,8H32.1ZM32,39a3,3,0,0,1-3-3,3,3,0,0,1,6,0A3,3,0,0,1,32,39Zm8-5H38.7A7,7,0,0,0,32,29H30.9l.5-3.1h9.9Z"></path>
                         <path d="M4,15H14a2,2,0,0,0,0-4H4a2,2,0,0,0,0,4Z"></path>
                         <path d="M15,19a2,2,0,0,0-2-2H5a2,2,0,0,0,0,4h8A2,2,0,0,0,15,19Z"></path>
@@ -305,13 +310,13 @@ const Home = () => {
           </div>
         </div>
         <h3 className="var-h3 mt-4 pt-md-4 pt-2">¡Si, asi de facil!</h3>
-        <a href={whatsappURL} className="text-decoration-none btn fs-5">
+        <a href={whatsappURL} className="text-decoration-none btn fs-5" target="_blank">
           Realiza tu pedido ahora
         </a>
       </div>
 
       <div
-        className="container ig_sec p-4 m-4 shadow bg-light"
+        className="container ig_sec p-4 my-4 mx-auto shadow bg-light"
         data-aos="fade-up"
         data-aos-duration="2000"
       >
@@ -321,7 +326,7 @@ const Home = () => {
             width="24"
             height="24"
             fill="currentColor"
-            class="bi bi-instagram"
+            className="bi bi-instagram"
             viewBox="0 0 16 16"
           >
             <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
@@ -337,23 +342,24 @@ const Home = () => {
           Ir al perfil
         </a>
         <div className="insta-grid">
-          <div className="insta-post">
-            <iframe
-              src="https://cdn.iframe.ly/api/iframe?app=1&url=https://www.instagram.com/p/DLisxHUJh0A/&key=925108d922be940af814f71907a7df4b"
-              title="Post 1"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
-          <div className="insta-post">
-            <iframe
-              src="https://cdn.iframe.ly/api/iframe?app=1&url=https://www.instagram.com/p/DMqrlWXi4me/&key=925108d922be940af814f71907a7df4b"
-              title="Post 2"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
+
+  <blockquote
+    className="instagram-media"
+    data-instgrm-permalink="https://www.instagram.com/p/DXZjzVtDepc/"
+    data-instgrm-version="14"
+  ></blockquote>
+
+<blockquote
+  className="instagram-media"
+  data-instgrm-permalink="https://www.instagram.com/p/DXPAhWyDdks/"
+  data-instgrm-version="14"
+></blockquote>
+  <blockquote
+    className="instagram-media"
+    data-instgrm-permalink="https://www.instagram.com/p/DXWpuYnDcXm/"
+    data-instgrm-version="14"
+  ></blockquote>
+</div>
       </div>
     </div>
   );
