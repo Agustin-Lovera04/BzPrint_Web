@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="col-md-4 col-12 text-light text-center">
           <h4 >CONTACTO</h4>
           <hr />
-          <p className="contacto_txt_footer text-light ">+54 9 342-612-8483 <br className='d-md-none'/> bzprintsf@gmail.com</p>
+          <p className="contacto_txt_footer text-light ">+54 9 342-612-8483 <br className='d-md-none'/> bzmayorista@gmail.com</p>
         </div>
         <div className="col-md-4 col-12 text-center">
           {" "}
@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="col-12 col-md-4 text-light text-center pt-md-0 pt-4 rrss_icons_footer">
           <h4>REDES</h4>
           <hr />
-          <a href="https://www.instagram.com/bzprint_/" target='_blank'>
+          <a href="https://www.instagram.com/bzmayorista/" target='_blank'>
           <svg
             width="54px"
             height="54px"

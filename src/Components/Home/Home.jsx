@@ -56,10 +56,10 @@ const cardsData = [
 
 const Home = () => {
   useEffect(() => {
-  if (window.instgrm) {
-    window.instgrm.Embeds.process();
-  }
-}, []);
+    if (window.instgrm) {
+      window.instgrm.Embeds.process();
+    }
+  }, []);
   useEffect(() => {
     window.AOS.init({
       duration: 1000,
@@ -72,11 +72,10 @@ const Home = () => {
       <Sc2_Inicio />
       <div
         className="libreria_inicio_container"
-        data-aos="fade-up"
-        data-aos-duration="2000"
       >
         <h1 className="text-center var-h1">LIBRERÍA</h1>
-        <div className="col-12 d-flex flex-row justify-content-center gap-md-4 gap-2 flex-wrap">
+        <div className="col-12 d-flex flex-row justify-content-center gap-md-4 gap-2 flex-wrap"         data-aos="fade-up"
+        data-aos-duration="2000">
           {cardsData.map((p) => (
             <Card key={p.codigo} prod={p} />
           ))}
@@ -110,7 +109,7 @@ const Home = () => {
           >
             <h2 className="var-h2">
               <span className="click-wrapper">
-                Todo lo que
+                Todo lo que&nbsp;
                 <span className="svg-click-inicio">
                   <svg
                     width="130px"
@@ -151,24 +150,27 @@ const Home = () => {
           data-aos="fade-up"
           data-aos-duration="1500"
         >
-          <h1 className="var-h1 title_desktop">Impresiones/Anillados</h1>
+          <h1 className="var-h1 title_desktop">BZ Mayorista</h1>
 
           <div className="title_mobile">
-            <h1 className="var-h1">Impresiones</h1>
-            <hr />
-            <h1 className="var-h1">Anillados</h1>
+            <h1 className="var-h1">BZ Mayorista</h1>
           </div>
         </div>
 
         <p className="var-txt text-center txt_impresiones_inicio">
-          En BZprint te ofrecemos un servicio de impresiones rápidas, económicas
-          y de calidad para que tengas tus apuntes siempre a tiempo. Ya sea que
-          necesites fotocopias sueltas o anillados completos, nos adaptamos a
-          tus necesidades con atención personalizada y materiales resistentes.
+          Acá venís a comprar mejor, no más caro.
+          Precios reales para que ganes más en cada venta.
+          Stock listo para despachar, sin vueltas y directo a tu negocio.
+
+          Trabajamos con librería, bazar, marroquinería, tecnología y productos en tendencia para que puedas revender con buena rotación y mejor margen.
+
+          Si querés crecer en serio, estás en el lugar correcto.
+          Comprá hoy. Vendé mejor mañana.
         </p>
 
         <div className="container steps_container  flex-wrap">
           <div className="row justify-content-around">
+            {/* PASO 1: Carrito de compras */}
             <div
               className="step col-md-2 col-6"
               data-aos="fade-up"
@@ -182,25 +184,22 @@ const Home = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-
-                  <path
-                    d="M8 10.5H16M8 14.5H11M21.0039 12C21.0039 16.9706 16.9745 21 12.0039 21C9.9675 21 3.00463 21 3.00463 21C3.00463 21 4.56382 17.2561 3.93982 16.0008C3.34076 14.7956 3.00391 13.4372 3.00391 12C3.00391 7.02944 7.03334 3 12.0039 3C16.9745 3 21.0039 7.02944 21.0039 12Z"
-                    stroke="#2E3C8C"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </g>
+                <path
+                  d="M6.29971 5H21L19 12H7.37671M2 2H5.19971L6.99971 17H19M9 21C9 21.5523 8.55228 22 8 22C7.44772 22 7 21.5523 7 21C7 20.4477 7.44772 20 8 20C8.55228 20 9 20.4477 9 21ZM20 21C20 21.5523 19.5523 22 19 22C18.4477 22 18 21.5523 18 21C18 20.4477 18.4477 20 19 20C19.5523 20 20 20.4477 20 21Z"
+                  stroke="#2E3C8C"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
-              <p className="text-light">Escribinos por whatsapp</p>
+              <p className="text-light">
+                <strong>Agregás al carrito</strong>
+                <br />
+                Elegí todos los productos que quieras para tu negocio
+              </p>
             </div>
+
+            {/* PASO 2: Validación / Tarjeta con Check */}
             <div
               className="step col-md-2 col-6"
               data-aos="fade-up"
@@ -214,27 +213,22 @@ const Home = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <path
-                    d="M17 19H21M19 17V21M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H12M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19M19 9V12M9 17H12M9 13H15M9 9H10"
-                    stroke="#2E3C8C"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>{" "}
-                </g>
+                <path
+                  d="M2 8.5H22M21 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H12M9.5 15H5.5M15 15L17.5 17.5L22.5 12.5"
+                  stroke="#2E3C8C"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
               <p className="text-light">
-                Nos envias el archivo que queres imprimir
+                <strong>Superás el mínimo</strong>
+                <br />
+                Tu pedido debe superar los $50.000 mayoristas.
               </p>
             </div>
+
+            {/* PASO 3: Mensaje / WhatsApp */}
             <div
               className="step col-md-2 col-6"
               data-aos="fade-up"
@@ -242,29 +236,28 @@ const Home = () => {
               data-aos-delay="800"
             >
               <svg
-                fill="#2E3C8C"
                 width="100px"
                 height="100px"
-                viewBox="0 0 512 512"
+                viewBox="0 0 24 24"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <title>ionicons-v5-i</title>
-                  <path d="M64,144H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32Z"></path>
-                  <path d="M448,368H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z"></path>
-                  <path d="M448,240H221.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32h66.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z"></path>
-                </g>
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.8214 2.48664 15.5291 3.33714 17L2 22L7 20.6629C8.47087 21.5134 10.1786 22 12 22ZM8 10H16M8 14H14"
+                  stroke="#2E3C8C"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
               <p className="text-light">
-                Nos indicas las caracteristicas del pedido
+                <strong>Nos llega por WhatsApp</strong>
+                <br />
+                Recibimos automáticamente tu pedido y coordinamos todo con vos.
               </p>
             </div>
+
+            {/* PASO 4: Envío / Camión */}
             <div
               className="step col-md-2 col-6"
               data-aos="fade-up"
@@ -274,44 +267,29 @@ const Home = () => {
               <svg
                 width="100px"
                 height="100px"
-                viewBox="0 0 48 48"
+                viewBox="0 0 24 24"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="#2E3C8C"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-
-                  <g id="Layer_2" data-name="Layer 2">
-
-                    <g id="invisible_box" data-name="invisible box">
-
-                      <rect width="48" height="48" fill="none"></rect>{" "}
-                    </g>
-                    <g id="Health_Icons" data-name="Health Icons">
-
-                      <g>
-
-                        <path d="M37.7,11.1A3,3,0,0,0,35.4,10H34.2l.3-1.7A3.1,3.1,0,0,0,33.9,6a3.2,3.2,0,0,0-2.2-1H7.8a2,2,0,0,0,0,4H30.3l-4,22.9a6.8,6.8,0,0,0-1,2.1H20.7A7,7,0,0,0,7.3,34H6.2l.5-2.9a2,2,0,0,0-1.6-2.3,2,2,0,0,0-2.3,1.6L2,34.7A2.8,2.8,0,0,0,2.7,37a2.8,2.8,0,0,0,2.1,1H7.3a7,7,0,0,0,13.4,0h4.6a7,7,0,0,0,13.4,0h2a3.2,3.2,0,0,0,3.1-2.7L46,22.5ZM14,39a3,3,0,0,1-3-3,3,3,0,0,1,6,0A3,3,0,0,1,14,39ZM33.5,14h1.3l5.9,8H32.1ZM32,39a3,3,0,0,1-3-3,3,3,0,0,1,6,0A3,3,0,0,1,32,39Zm8-5H38.7A7,7,0,0,0,32,29H30.9l.5-3.1h9.9Z"></path>
-                        <path d="M4,15H14a2,2,0,0,0,0-4H4a2,2,0,0,0,0,4Z"></path>
-                        <path d="M15,19a2,2,0,0,0-2-2H5a2,2,0,0,0,0,4h8A2,2,0,0,0,15,19Z"></path>
-                        <path d="M6,23a2,2,0,0,0,0,4h6a2,2,0,0,0,0-4Z"></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
+                <path
+                  d="M1 10H14M14 10H18.5L22 13.5V18H14M14 10V18M1 10V18H14M4 18C4 19.1046 4.89543 20 6 20C7.10457 20 8 19.1046 8 18M4 18C4 16.8954 4.89543 16 6 16C7.10457 16 8 16.8954 8 18M16 18C16 19.1046 16.8954 20 18 20C19.1046 20 20 19.1046 20 18M16 18C16 16.8954 16.8954 16 18 16C19.1046 16 20 16.8954 20 18M1 6H10M1 14H6"
+                  stroke="#2E3C8C"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
-              <p className="text-light">Abonas y te lo enviamos</p>
+              <p className="text-light">
+                <strong>Abonás y despachamos</strong>
+                <br />
+                Pagás fácil y dejamos el stock listo para enviar.
+              </p>
             </div>
           </div>
         </div>
         <h3 className="var-h3 mt-4 pt-md-4 pt-2">¡Si, asi de facil!</h3>
         <a href={whatsappURL} className="text-decoration-none btn fs-5" target="_blank">
-          Realiza tu pedido ahora
+          ARMAR MI PEDIDO
         </a>
       </div>
 
@@ -343,23 +321,23 @@ const Home = () => {
         </a>
         <div className="insta-grid">
 
-  <blockquote
-    className="instagram-media"
-    data-instgrm-permalink="https://www.instagram.com/p/DXZjzVtDepc/"
-    data-instgrm-version="14"
-  ></blockquote>
+          <blockquote
+            className="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DXZjzVtDepc/"
+            data-instgrm-version="14"
+          ></blockquote>
 
-<blockquote
-  className="instagram-media"
-  data-instgrm-permalink="https://www.instagram.com/p/DXPAhWyDdks/"
-  data-instgrm-version="14"
-></blockquote>
-  <blockquote
-    className="instagram-media"
-    data-instgrm-permalink="https://www.instagram.com/p/DXWpuYnDcXm/"
-    data-instgrm-version="14"
-  ></blockquote>
-</div>
+          <blockquote
+            className="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DXPAhWyDdks/"
+            data-instgrm-version="14"
+          ></blockquote>
+          <blockquote
+            className="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DXWpuYnDcXm/"
+            data-instgrm-version="14"
+          ></blockquote>
+        </div>
       </div>
     </div>
   );
