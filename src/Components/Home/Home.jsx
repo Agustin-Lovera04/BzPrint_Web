@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Products_Container from "../Products_Container/Products_Container";
 import Card from "../Card/Card";
 
-const phoneNumber = "5493425260028";
+const phoneNumber = "5493426128483";
 const message = `Hola! Quiero realizar un pedido de ...`;
 const messageEncoded = encodeURIComponent(message);
 const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${messageEncoded}`;

@@ -6,7 +6,7 @@ const Carousel_Home = () => {
     const myCarouselElement = document.querySelector('#carouselExampleControls');
     if (myCarouselElement) {
       const carousel = new window.bootstrap.Carousel(myCarouselElement, {
-        interval: 6000,
+        interval: 4000,
         ride: 'carousel',
         pause: false,
       });
