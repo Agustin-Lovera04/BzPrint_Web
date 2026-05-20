@@ -1,6 +1,6 @@
 :root{
   /* Paleta de colores */
-  --color_var_1: #3F52BF;
+  --color_var_1: hwb(231 3% 61%);
   --color_var_2: #2E3C8C;
   --color_var_3: #1D2659;
   --color_var_4: #BFBFBF;

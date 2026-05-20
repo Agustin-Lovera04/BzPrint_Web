@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="col-2">
           <Link to={"/"}>
             <img
-              src="./images/BZPrint-Logo.png"
+              src="./images/BzMayorista-Logo.png"
               alt="logo"
               className="brand_image_navbar"
             />

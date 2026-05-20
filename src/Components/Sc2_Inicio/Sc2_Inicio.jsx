@@ -5,7 +5,7 @@ const Sc2_Inicio = () => {
   return (
     <div className="container sc2-container d-flex justify-content-center gap-md-3 gap-1 flex-wrap">
         <div className="col-md-4 col-6 box box1" data-aos="fade-right" data-aos-duration="1500">
-          Fibrones
+          Escolar
           <button className='btn box_btn'>
             <Link to={'/libreria?category=Librería'}>
             Ver mas
@@ -13,7 +13,7 @@ const Sc2_Inicio = () => {
           </button>
         </div>
         <div className="col-md-4 col-6 box box2 text-center" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="400">
-          Esenciales del estudiante
+          Universidad
           <button className='btn box_btn'>
             <Link to={'/libreria?category=Librería'}>
               Ver mas
@@ -21,7 +21,7 @@ const Sc2_Inicio = () => {
           </button>
         </div>
         <div className="col-md-4 col-6 box box3" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="600">
-          Cuadernillos
+          Organización
           <button className='btn box_btn'>
             <Link to={'/libreria?category=Papelería'}>Ver mas</Link>
           </button>
