@@ -12,6 +12,7 @@
 #root{
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
+  background-color: #ebe8e8;
 }
 
 .container-fluid{

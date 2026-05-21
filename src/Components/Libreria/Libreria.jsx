@@ -50,7 +50,7 @@ const Libreria = () => {
             data-aos-duration="1000"
           >
             <img
-              src="./images/grid1_libreria.png"
+              src="./images/grid1.jpeg"
               alt="librería"
               className="img1_grid img-fluid"
             />
@@ -63,9 +63,9 @@ const Libreria = () => {
               data-aos-delay="500"
               data-aos-duration="900"
             >
-              <h3 className="title_img_grid">Pizarras</h3>
+              <h3 className="title_img_grid">Oficina</h3>
               <button className="btn">
-                <Link to="/libreria?nombre=pizarra">Ver más</Link>
+                <Link to="/libreria?category=oficina">Ver más</Link>
               </button>
             </div>
 
@@ -75,9 +75,9 @@ const Libreria = () => {
               data-aos-delay="700"
               data-aos-duration="900"
             >
-              <h3 className="title_img_grid text-light">Carpetas</h3>
+              <h3 className="title_img_grid text-light">Regalería</h3>
               <button className="btn">
-                <Link to="/libreria?nombre=carpeta">Ver más</Link>
+                <Link to="/libreria?category=regaleria">Ver más</Link>
               </button>
             </div>
           </div>
@@ -96,7 +96,7 @@ const Libreria = () => {
             data-aos-duration="1000"
           >
             <img
-              src="./images/grid4_libreria.png"
+              src="./images/grid2.jpeg"
               alt="librería"
               className="img1_grid img-fluid"
             />

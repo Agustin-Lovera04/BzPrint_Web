@@ -11,45 +11,52 @@ const message = `Hola! Quiero realizar un pedido de ...`;
 const messageEncoded = encodeURIComponent(message);
 const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${messageEncoded}`;
 
+
+// 110100 - 50000 - 35150 - 62050 
 const cardsData = [
   {
     badge: "DESTACADO",
-    codigo: "9887m",
-    nombre: "Velador led metal color one touch en caja",
-    precio_efectivo: "24079.71",
-    precio_transferencia: "30480.65",
+    codigo: "35491",
+    nombre: "RESALT. FILGO FINO PASTEL x10u. #",
+    precio: "4055.436",
     URLIMAGE: [
-      "https://firebasestorage.googleapis.com/v0/b/bz-print-9007b.firebasestorage.app/o/images%2Fd7d0cb56-ac53-466e-a7ed-7b673e1652f7.jpg?alt=media&token=e5d3597f-e951-41f5-83d0-ab114ffb5041",
+      "https://www.eloncemayorista.com.ar/system_files/articulos/imagenes/0124/35491.jpg?d=250320062037",
+    ],
+  },
+    {
+    badge: "DESTACADO",
+    codigo: "110100",
+    nombre: "RESMA HUSARES LEGAL 75gr.",
+    precio: "11997.919",
+    URLIMAGE: [
+      "https://www.eloncemayorista.com.ar/system_files/articulos/imagenes/0019/110100.jpg?d=210514053133",
     ],
   },
   {
     badge: "DESTACADO",
-    codigo: "33169m",
-    nombre: "Auriculares inalambricos AS6 - en caja - 14 x 8 x",
-    precio_efectivo: "11684.06",
-    precio_transferencia: "14789.95",
+    codigo: "50000",
+    nombre: "BOLIG BIC OPACO 1.0 x50u. (24) (R49000) Color...",
+    precio: "33681.681",
     URLIMAGE: [
-      "https://firebasestorage.googleapis.com/v0/b/bz-print-9007b.firebasestorage.app/o/images%2FOh09B063J08TtESC3ovAOfLXStvIiOfOrLAEKCm8.jpg?alt=media&token=566b32be-d2f6-4fda-8500-aa66b67e9346",
+      "https://www.eloncemayorista.com.ar/system_files/articulos/imagenes/0011/50000.jpg?d=210809120556",
     ],
   },
   {
     badge: "DESTACADO",
-    codigo: "110010",
-    nombre: "CUADERNILLO A4 T/B HUSARES COLOR x80h. ",
-    precio_efectivo: "3485.51",
-    precio_transferencia: "4412.04",
+    codigo: "35150",
+    nombre: "LAPIZ/COLOR FILGO Eco x24 Largos (6/120)",
+    precio:"4208.196",
     URLIMAGE: [
-      "https://firebasestorage.googleapis.com/v0/b/bz-print-9007b.firebasestorage.app/o/images%2F129af6eb-b3a4-496f-a2e8-bd0ae703bad6.jpg?alt=media&token=37ffe9d7-5f8e-4e94-aaef-0c52f81aee34",
+      "https://www.eloncemayorista.com.ar/system_files/articulos/imagenes/0110/35150.jpg",
     ],
   },
   {
     badge: "DESTACADO",
-    codigo: "35292",
-    nombre: "RESALTADOR FILGO FINO PASTEL x6u. ",
-    precio_efectivo: "2359.42",
-    precio_transferencia: "2986.61",
+    codigo: "62050",
+    nombre: "ADH SINTETICO VOLIGOMA 30ml. x12u. (12)",
+    precio:"19099.045",
     URLIMAGE: [
-      "https://www.eloncemayorista.com.ar/system_files/articulos/imagenes/0110/35292.jpg?d=",
+      "https://www.eloncemayorista.com.ar/system_files/articulos/imagenes/0014/62050.jpg?d=210807025323",
     ],
   },
 ];
@@ -73,7 +80,7 @@ const Home = () => {
       <div
         className="libreria_inicio_container"
       >
-        <h1 className="text-center var-h1">LIBRERÍA</h1>
+        <h1 className="text-center var-h1">PRODUCTOS DESTACADOS</h1>
         <div className="col-12 d-flex flex-row justify-content-center gap-md-4 gap-2 flex-wrap"         data-aos="fade-up"
         data-aos-duration="2000">
           {cardsData.map((p) => (
