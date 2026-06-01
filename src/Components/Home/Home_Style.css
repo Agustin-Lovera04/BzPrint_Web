@@ -38,10 +38,12 @@
 
 /* Impresiones */
 .impresiones_inicio_container {
-  background-image: url("/images/Test-fondo2.png");
+  background-color: rgba(63, 82, 191, 0.8);
+  padding: 4rem 0 10rem 0 !important;
+  /*background-image: url("/images/Test-fondo2.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 4rem 0 10rem 0 !important;
+  */
 }
 
 .title_mobile {
