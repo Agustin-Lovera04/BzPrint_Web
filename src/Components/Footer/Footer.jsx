@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="col-md-4 col-12 text-center">
           {" "}
           <img
-            src="./images/BZPrint-Logo.png"
+            src="./images/BzMayorista-Logo.png"
             alt="logo"
             className="brand_image_navbar"
           />

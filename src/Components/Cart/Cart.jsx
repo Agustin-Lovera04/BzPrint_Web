@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [envio] = useState(0);
+  const COMPRA_MINIMA = 50000;
 
   const {
     cart,
@@ -24,6 +25,9 @@ const Cart = () => {
     (acc, prod) => acc + getPrecio(prod) * prod.cantidad,
     0
   );
+
+  const faltaParaMinimo = COMPRA_MINIMA - subtotal;
+  const compraMinimaCumplida = subtotal >= COMPRA_MINIMA;
 
   useEffect(() => {
     const nuevoTotal = subtotal + envio;
@@ -94,7 +98,8 @@ const Cart = () => {
               </div>
 
               <div className="col-6 col-md-2 text-center prod_prices_cart">
-                <small className="d-md-none">Precio:</small> ${(getPrecio(prod)).toFixed(2)}
+                <small className="d-md-none">Precio:</small> $
+                {getPrecio(prod).toFixed(2)}
               </div>
 
               <div className="col-6 col-md-2 text-center prod_prices_cart">
@@ -115,9 +120,7 @@ const Cart = () => {
 
               <div className="alert alert-warning mb-0">
                 <h4>Costo Envío</h4>
-                <p className="text-dark mb-0">
-                  Costo de envio (a acordar)
-                </p>
+                <p className="text-dark mb-0">Costo de envio (a acordar)</p>
               </div>
             </div>
 
@@ -142,11 +145,30 @@ const Cart = () => {
                 </table>
               </div>
 
-              <Link to={"/ticketCompra"} className="text-center">
-                <button className="btn btn-primary mb-4 btn-custom-width">
-                  Confirmar compra
-                </button>
-              </Link>
+              {!compraMinimaCumplida && (
+                <div className="alert alert-warning text-center">
+                  La compra mínima mayorista es de $50.000.
+                  <br />
+                  Te faltan ${faltaParaMinimo.toFixed(2)} para poder confirmar.
+                </div>
+              )}
+
+              {compraMinimaCumplida ? (
+                <Link to={"/ticketCompra"} className="text-center">
+                  <button className="btn btn-primary mb-4 btn-custom-width">
+                    Confirmar compra
+                  </button>
+                </Link>
+              ) : (
+                <div className="text-center">
+                  <button
+                    className="btn btn-secondary mb-4 btn-custom-width"
+                    disabled
+                  >
+                    Confirmar compra
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </>
