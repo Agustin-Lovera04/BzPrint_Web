@@ -295,9 +295,9 @@ const Home = () => {
           </div>
         </div>
         <h3 className="var-h3 mt-4 pt-md-4 pt-2">¡Si, asi de facil!</h3>
-        <a href={whatsappURL} className="text-decoration-none btn fs-5" target="_blank">
+        <Link to={'/libreria'} className="text-decoration-none btn fs-5">
           ARMAR MI PEDIDO
-        </a>
+        </Link>
       </div>
 
       <div
