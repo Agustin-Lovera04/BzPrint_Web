@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
 import Home from "../Components/Home/Home"
 import Layout from "../Components/Layout/Layout"
 import Cart from "../Components/Cart/Cart"
@@ -9,7 +9,7 @@ import TicketCompra from "../Components/TicketCompra/TicketCompra"
 
 const Router = () => {
   return (
-    <BrowserRouter basename="/BzPrint_Web/">
+    <HashRouter >
     <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -20,7 +20,7 @@ const Router = () => {
           <Route path="/ticketCompra" element={<TicketCompra />} />
         </Route>
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
