@@ -52,8 +52,6 @@ See https://reactjs.org/docs/forms.html#controlled-components`),K=at.initialPage
 
 `);const x=`✨ *¡Nueva Orden de Compra!* ✨
 ━━━━━━━━━━━━━━━━━━━━
-📚 _"Que te dé gusto estudiar"_
-
 👤 *Cliente:* ${p}
 📍 *Dirección:* ${y}
 📝 *Especificaciones:* ${E||"Ninguna"}
@@ -64,6 +62,6 @@ ${R}
 📜 *Método de pago:* ${o}
 💳 *Total a pagar:* $${a}
 ━━━━━━━━━━━━━━━━━━━━
-🙌 ¡Gracias por elegir *Bz Print*!
-Nos pondremos en contacto muy pronto para confirmar envío y pago. 📦😊
+¡Gracias por elegir Bz mayorista!
+Nos pondremos en contacto muy pronto para confirmar envío y pago.📦
 `,k=encodeURIComponent(x),G=`https://api.whatsapp.com/send?phone=${h}&text=${k}`;window.open(G,"_blank"),r()};return b.jsxs("div",{className:"container d-flex flex-column justify-content-center align-items-center",children:[b.jsx("h1",{className:"var-h1 text-center mb-4",children:"Orden de compra"}),b.jsxs("form",{className:"col-10",onSubmit:d,children:[b.jsxs("div",{className:"mb-3",children:[b.jsx("label",{htmlFor:"nombre",className:"form-label fw-semibold",children:"Nombre completo"}),b.jsx("input",{type:"text",id:"nombre",className:"form-control",placeholder:"Ingrese su nombre"})]}),b.jsxs("div",{className:"mb-3",children:[b.jsx("label",{htmlFor:"direccion",className:"form-label fw-semibold",children:"Dirección"}),b.jsx("input",{type:"text",id:"direccion",className:"form-control",placeholder:"Ingrese su dirección"})]}),b.jsxs("div",{className:"mb-3",children:[b.jsx("label",{htmlFor:"especificaciones",className:"form-label fw-semibold",children:"Especificaciones del domicilio"}),b.jsx("input",{type:"text",id:"especificaciones",className:"form-control",placeholder:"Especifique detalles del domicilio"})]}),b.jsx("button",{type:"submit",className:"btn btn-primary w-100 mt-4 mb-4",children:"Confirmar Orden"})]})]})},iR=()=>b.jsx(k2,{children:b.jsx(m2,{children:b.jsxs(Si,{element:b.jsx($4,{}),children:[b.jsx(Si,{path:"/",element:b.jsx(Q4,{})}),b.jsx(Si,{path:"/impresiones",element:b.jsx(J4,{})}),b.jsx(Si,{path:"/libreria",element:b.jsx(W4,{})}),b.jsx(Si,{path:"/libreria/:codigo",element:b.jsx(nR,{})}),b.jsx(Si,{path:"/cart",element:b.jsx(Z4,{})}),b.jsx(Si,{path:"/ticketCompra",element:b.jsx(aR,{})})]})})}),rR=()=>b.jsx(iR,{});fE.createRoot(document.getElementById("root")).render(b.jsx(Y4,{children:b.jsx(rR,{})}));
